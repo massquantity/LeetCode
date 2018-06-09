@@ -1,19 +1,28 @@
+public class TreeNode
+{
+    int val;
+    TreeNode left;
+    TreeNode right;
+    TreeNode(int x) { val = x; }
+}
+
 class Solution
 {
-    public boolean isValid(String s)
+    public List<Integer> preorderTraversal(TreeNode root)
     {
-        Stack<Character> stack = new Stack<Character>();
-        for (char c : s.toCharArray())
+        List ans = new ArrayList();
+        Stack stack = new Stack();
+        if (root == null)
+            return ans;
+        stack.push(root);
+        while (root != null && !stack.isEmpty())
         {
-            if (c == '{')
-                stack.push('}');
-            else if (c == '[')
-                stack.push(']');
-            else if (c == '(')
-                stack.push(')');
-            else if (stack.isEmpty() || stack.pop() != c)
-                return false;
+            root = stack.pop();
+            ans.add(root.val);
+            if (root.right != null)
+                stack.push(root.right);
+            if (root.left != null)
+                stack.push(root.left);
         }
-        return stack.isEmpty();
+        return ans;
     }
-}

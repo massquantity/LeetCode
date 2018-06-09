@@ -1,18 +1,20 @@
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+
 class Solution:
-    def isValid(self, s):
+    def preorderTraversal(self, root):
+        ans = []
         stack = []
-        for char in s:
-            if char == "(":
-                stack.append(")")
-            elif char == "{":
-                stack.append("}")
-            elif char == "[":
-                stack.append("]")
-            elif stack == [] or stack.pop() != char:
-                return False
-        return stack == []
-				
-if __name__ == '__main__':
-    s='{[]}'
-    res = Solution().isValid(s)
-    print(res)
+        if root:
+            stack.append(root)
+        while (root and stack != []):
+            root = stack.pop()
+            ans.append(root.val)
+            if root.right:
+                stack.append(root.right)
+            if root.left:
+                stack.append(root.left)
+        return ans
