@@ -1,20 +1,13 @@
-class TreeNode:
-    def __init__(self, x):
-        self.val = x
-        self.left = None
-        self.right = None
-
 class Solution:
-    def preorderTraversal(self, root):
-        ans = []
-        stack = []
-        if root:
-            stack.append(root)
-        while (root and stack != []):
-            root = stack.pop()
-            ans.append(root.val)
-            if root.right:
-                stack.append(root.right)
-            if root.left:
-                stack.append(root.left)
-        return ans
+    def maxArea(self, height):
+        i = 0
+        j = len(height) - 1
+        area = min(height[i], height[j]) * j
+        if height[i] <= height[j]:
+            i += 1
+        else:
+            j -= 1
+        area_2 = min(height[i], height[j]) * (j - i)
+        if area < area_2:
+            area = area_2
+        return area
