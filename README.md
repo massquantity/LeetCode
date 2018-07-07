@@ -1,4 +1,4 @@
 
 ### LeetCode Solution 
 
-**mainly Python/Java**
+mainly Python/Java
