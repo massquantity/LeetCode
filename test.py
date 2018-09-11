@@ -1,13 +1,13 @@
 class Solution:
-    def maxArea(self, height):
-        i = 0
-        j = len(height) - 1
-        area = min(height[i], height[j]) * j
-        if height[i] <= height[j]:
-            i += 1
-        else:
-            j -= 1
-        area_2 = min(height[i], height[j]) * (j - i)
-        if area < area_2:
-            area = area_2
-        return area
+    def romanToInt(self, s):
+        maps = {'I':1, 'V':5, 'X':10, 'L':50, 
+                'C':100, 'D':500, 'M':1000}
+
+        total = 0
+        prev = 0
+        for char in s:
+            curr = maps.get(char)
+            total += (curr - 2 * prev) if (curr > prev) else curr
+            prev = curr
+        return total
+
