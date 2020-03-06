@@ -1,5 +1,5 @@
 
 ## LeetCode Solution 
 
-#### mainly Python/Java/C++
+#### mainly Python/Java/C/C++
 
