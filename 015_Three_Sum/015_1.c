@@ -40,17 +40,24 @@ int** threeSum(int* nums, int numsSize, int* returnSize, int** returnColumnSizes
 
 
 int main() {
-	int a[] = {-1, 0, 1, 2, -1, -4};
-	int r = 1;
-	int *r1 = &r;
-	int **r2 = &r1;
-	int **res = threeSum(a, sizeof(a) / sizeof(int), r1, r2);
-	int i = 0;
-	while (i < 9) {
-		if (i < 3 || i > 5)
-		    printf("%d ", *(*res + i));  // (*res)[i]
-		if (i == 2)
-		    printf("\n");
-		i++;
-	}
+    int a[] = {-1, 0, 1, 2, -1, -4};
+    int r = 0;
+    int *r1 = &r;
+    int **res = threeSum(a, sizeof(a) / sizeof(int), r1, &r1);
+    printf("%lu\n", sizeof(res));
+    for (int i = 0; i < 2; ++i) {
+        for (int j = 0; j < 3; ++j)
+            printf("%d ", res[i][j]);
+        printf("\n");
+    }
+    /*
+    int i = 0;
+    while (i < 9) {
+        if (i < 3 || i > 5)
+            printf("%d ", *(*res + i));  // (*res)[i]
+        if (i == 2)
+            printf("\n");
+        i++;
+    }
+    */
 }
