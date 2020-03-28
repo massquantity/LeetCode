@@ -10,11 +10,11 @@ struct TreeNode {
 };
 
 // returnSize: 3  returnColumnSizes: [1, 2, 2]
-int** zigzagLevelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes){
+int** zigzagLevelOrder(struct TreeNode* root, int* returnSize, int** returnColumnSizes) {
+    *returnSize = 0;
+    if (root == NULL) return NULL;
     int **res = (int **)malloc(sizeof(int *) * 1000);
     *returnColumnSizes = (int *)malloc(sizeof(int) * 1000);
-    *returnSize = 0;
-    if (root == NULL) return res;
     struct TreeNode *queue[10000];
     size_t count, begin = 0, end = 1;
     queue[begin] = root;
