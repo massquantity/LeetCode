@@ -13,14 +13,6 @@ int uniquePaths(int m, int n){
     return dp[m - 1][n - 1];
 }
 
-/*
-static void traverse(struct TreeNode *tree) {
-    printf("%d ", tree->val);
-    if (tree->left)  traverse(tree->left);
-    if (tree->right) traverse(tree->right);
-}
-*/
-
 int main(void) {
     int m = 7, n = 3;
     printf("%d\n", uniquePaths(m, n));
