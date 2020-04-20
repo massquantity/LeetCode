@@ -16,7 +16,7 @@ public class Test
         for (int i = 0; i < s.length(); i++)
         {
             Integer curr = map.get(s.charAt(i));
-            total = (i < s.length() - 1 && curr < map.get(s.charAt(i))) ? total - curr : total + curr;
+            total = (i < s.length() - 1 && curr < map.get(s.charAt(i + 1))) ? total - curr : total + curr;
         }
         return total;
     }
