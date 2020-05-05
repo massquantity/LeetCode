@@ -12,6 +12,17 @@ int cuttingRope(int n) {
     return a * n;
 }
 
+int cuttingRope2(int n){
+    if (n <= 3) return n - 1;
+    long res = 1;
+    while (n > 4) {
+        res *= 3;
+        res = res % 1000000007;
+        n -= 3;
+    }
+    return res * n % 1000000007;
+}
+
 int cuttingRope1(int n) {
     if (n <= 3) return n - 1;
     int a = n / 3, b = n % 3;
