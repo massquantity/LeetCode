@@ -60,5 +60,3 @@ public class leetcode {
         System.out.println(s.reversePairs(arr));
     }
 }
-
-
