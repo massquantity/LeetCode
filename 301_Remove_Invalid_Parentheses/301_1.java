@@ -11,7 +11,7 @@ class Solution {
             }
             if (!valid.isEmpty()) return valid;
             Set<String> nextLevel = new HashSet<>();
-            for (String item: level) {
+            for (String item : level) {
                 for (int i = 0; i < item.length(); i++) {
                     if (item.charAt(i) == '(' || item.charAt(i) == ')') {
                         nextLevel.add(item.substring(0, i) + item.substring(i + 1));
